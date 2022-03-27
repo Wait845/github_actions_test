@@ -18,4 +18,4 @@ jobs:
   Second-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: wget ip.sb
+      - run: curl ip.sb
