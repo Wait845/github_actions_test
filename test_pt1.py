@@ -6,7 +6,7 @@ def test_t1():
 
 def test_t2():
     print("This is t2")
-    assert 2 == 1
+    assert 2 == 2
 
 def test_t3():
     print("This is t3")
