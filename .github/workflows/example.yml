@@ -14,10 +14,12 @@ jobs:
       - name: before checkout ls
         run: |
           ls
+          pwd
       - uses: actions/checkout@v2
       - name: after checkout ls
         run: |
           ls
+          pwd
       # - name: Set up Python ${{ matrix.python-version }}
       #   uses: actions/setup-python@v2
       #   with:
