@@ -16,6 +16,10 @@ jobs:
           ls
           pwd
       - uses: actions/checkout@v2
+      - name: clone
+        uses: actions/checkout_master
+        with:
+          repository: wait845/CAAC_flight_plan
       - name: after checkout ls
         run: |
           ls
