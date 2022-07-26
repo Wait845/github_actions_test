@@ -21,8 +21,8 @@ jobs:
       - name: clone
         uses: actions/checkout@master
         with:
-          repository: wait845/CAAC_flight_plan
-          path: caac
+          repository: wait845/spider_91
+          path: spider_91
       - name: after checkout ls
         run: |
           ls
