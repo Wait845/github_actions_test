@@ -23,6 +23,7 @@ jobs:
         with:
           repository: wait845/spider_91
           path: spider_91
+          token: ${{ secrets.GH_PAT }}
       - name: after checkout ls
         run: |
           ls
