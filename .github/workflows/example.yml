@@ -15,11 +15,14 @@ jobs:
         run: |
           ls
           pwd
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+        with:
+          path: main
       - name: clone
         uses: actions/checkout@master
         with:
           repository: wait845/CAAC_flight_plan
+          path: caac
       - name: after checkout ls
         run: |
           ls
