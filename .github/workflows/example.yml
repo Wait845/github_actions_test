@@ -4,30 +4,24 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9"]
+    # strategy:
+    #   matrix:
+    #     python-version: ["3.6"]
 
     steps:
-      - name: before checkout ls
-        run: |
-          ls
-          pwd
       - uses: actions/checkout@master
-        with:
-          path: main
-      - name: clone
-        uses: actions/checkout@master
-        with:
-          repository: wait845/spider_91
-          path: spider_91
-          token: ${{ secrets.GH_PAT }}
-      - name: after checkout ls
+      - name: Install requirements
         run: |
-          ls
-          pwd
+          pip install -r requirements.txt
+          pip install pytest-cov
+      - name: Run test
+        run: pytest --cov
+      - name: Upload coverage reports
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov -t ${{ secrets.CODECOV_TOKEN }}
       # - name: Set up Python ${{ matrix.python-version }}
       #   uses: actions/setup-python@v2
       #   with:

@@ -1,4 +1,6 @@
 import pytest
+import utils
+
 
 def test_t1():
     print("This is t1")
@@ -9,5 +11,5 @@ def test_t2():
     assert 2 == 2
 
 def test_t3():
-    print("This is t3")
-    assert 3==3
+    result = utils.add(1, 2)
+    assert result == 3
